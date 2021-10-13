@@ -2,7 +2,11 @@
 
 该项目是一个前后端分离项目，前端包括后台管理系统和前台用户系统。
 
+
+
 后台管理系统 **guli-admin** 基于 vue.js 和 vue-admin-template 模板进行页面的搭建，引入 Echarts 进行数据的图表显示；前台用户系统 **guli-front** 基于vue.js 和 nuxt 框架进行页面的搭建。都采用 axios 进行 Ajax 请求调用。
+
+
 
 后端 **guli-parent** 使用 SpringBoot + SpringCloud 进行微服务架构，使用 Nacos 进行服务注册和作为配置中心，使用 OpenFeign 进行服务调用，使用 Hystrix 进行服务降级和熔断，使用 Gateway 进行负载均衡，使用 MybatisPlus 进行持久层的操作，使用 OAuth2 + JWT 实现分布式的访问，引入 SpringSecurity 进行权限控制。整合了 EasyExcel 实现对 Excel 的读写，使用 Redis 缓存首页数据、订单信息、短信验证码等。
 
