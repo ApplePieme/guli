@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.applepieme.edu.mapper.CourseMapper">
+    <select id="getCoursePublishVoById" resultType="com.applepieme.edu.entity.vo.CoursePublishVo">
+        select
+              c.id,
+              c.title,
+              c.cover,
+              c.lesson_num as lessonNum,
+              s2.title as subjectLevelOne,
+              s1.title as subjectLevelTwo,
+              t.name as teacherName,
+              c.price
+        from
+              edu_course c
+              left join edu_teacher t on c.teacher_id = t.id
+              left join edu_subject s1 on c.subject_id = s1.id
+              left join edu_subject s2 on c.subject_parent_id = s2.id
+        where
+              c.id = #{id};
+    </select>
+
+    <select id="getCourseDetailsVoById" resultType="com.applepieme.vo.CourseDetailsVo">
+        select
+              c.id, c.title, c.price, c.lesson_num as lessonNum, c.cover, c.buy_count as buyCount, c.view_count as viewCount,
+              cd.description,
+              t.id as teacherId, t.name as teacherName, t.career, t.avatar,
+              s1.id as subjectLevelOneId, s1.title as subjectLevelOne,
+              s2.id as subjectLevelTwoId, s2.title as subjectLevelTwo
+        from
+              edu_course c
+              left join edu_course_description cd on c.id = cd.id
+              left join edu_teacher t on c.teacher_id = t.id
+              left join edu_subject s1 on c.subject_parent_id = s1.id
+              left join edu_subject s2 on c.subject_id = s2.id
+        where c.id = #{id}
+    </select>
+</mapper>
