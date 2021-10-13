@@ -12,7 +12,7 @@ public interface ConstantPropertiesUtils {
     String PATH = "/sms/";
 
     // 【3】开通服务后 买家中心-查看AppCode
-    String APPCODE = "d199304b7e8346f4b797aa4feb85aabe";
+    String APPCODE = "your appcode";
 
     // 【4】请求参数，签名编号【联系客服人员申请，测试请用1】
     String SIGN = "1";

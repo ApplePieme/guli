@@ -47,5 +47,12 @@ aliyun.oss.file.access-key-id=<your accessKeyId>
 aliyun.oss.file.access-key-secret=<your accessKeySecret>
 ```
 
+- `service-msm` 短信验证模块，`ConstantPropertiesUtils` 常量类中
 
+```java
+// 开通服务后 买家中心-查看AppCode
+String APPCODE = "your appcode";
+```
+
+短信验证使用的是阿里云云市场中的短信接口：https://market.aliyun.com/products/57126001/cmapi024822.html?spm=5176.2020520132.101.2.72e37218OQ2auu#sku=yuncode1882200000
 
